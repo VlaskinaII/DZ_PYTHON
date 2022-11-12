@@ -26,7 +26,7 @@ def search_user_in_db(text: str):
     for v in table_user.values():
         result = get_user(v)
         if result.user.name.__contains__(text) \
-                or result.user.tabel_number == text \
+                or result.user.tabel_number.__contains__(text) \
                 or result.department.__contains__(text):
             results.append(result)
     return results
